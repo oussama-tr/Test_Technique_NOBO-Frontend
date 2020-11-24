@@ -58,7 +58,7 @@ const ListItem = ({ item }) => {
 						modalTopOffset={90}
 						modalStyle={styles.modal}
 						ref={ratingMoal}>
-						<TouchableOpacity style={{alignItems: 'center', marginVertical: 10}} onPress={() => {ratingMoal.current?.close(); console.log(item.ratings);}}>
+						<TouchableOpacity style={{alignItems: 'center', marginVertical: 10}} onPress={() => {ratingMoal.current?.close()}}>
 							<MaterialIcons name="cancel" size={34} color={Colors.darker} />
 						</TouchableOpacity>
 						<FlatList

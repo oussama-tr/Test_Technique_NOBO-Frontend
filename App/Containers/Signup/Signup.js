@@ -11,11 +11,11 @@ const Signup = ({ navigation }) => {
 
   const dispatch = useDispatch();
 
-  const [firstName, setFirstName] = useState("Oussama");
-  const [lastName, setLastName] = useState("Trabelsi");
-  const [email, setEmail] = useState("oussama.trabelsi@esprit.tn");
-  const [role, setRole] = useState("client");
-  const [password, setPassword] = useState("azerty");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [role, setRole] = useState("");
+  const [password, setPassword] = useState("");
 
   const signup = () => {
     const payload = {
@@ -63,18 +63,7 @@ const Signup = ({ navigation }) => {
             onChangeText={password => setPassword(password)}
             value={password}
           />
-          <View style={{ flexDirection: 'row', marginTop: 10 }}>
-      		  <RadioButton.Group onValueChange={value => setRole(value)}
-      			   value={role}>
-        			   <View style={styles.valueContainer}>
-                   <Text style={{color: Colors.grey, fontWeight: 'bold'}}>Vous êtes</Text>
-        				   <RadioButton value="client" color={Colors.primary} />
-        					 <Text style={{color: Colors.grey}}>Client</Text>
-        					 <RadioButton value="prestataire" color={Colors.primary} />
-        				   <Text style={{color: Colors.grey}}>Prestataire</Text>
-      			     </View>
-      			  </RadioButton.Group>
-      	  </View>
+
           <TouchableOpacity
             onPress={() => {signup()}}
             style={styles.button}>

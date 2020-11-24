@@ -16,7 +16,7 @@ const ListItemRating = ({ item }) => {
 
 	return (
 		<View style={styles.container}>
-			<View style={{flexDirection: 'row'}}>
+			<View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
 				<Text style={{marginRight: 20, fontWeight: 'bold', fontSize: 16}}>{item.category}</Text>
 				<StarRating
 					fullStarColor='#FFDF00'

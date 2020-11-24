@@ -11,7 +11,7 @@ const Signin = ({ navigation }) => {
 
   const dispatch = useDispatch();
 
-  const [email, setEmail] = useState("oussama.trabelsi@esprit.tn");
+  const [email, setEmail] = useState("maria.delavega@gmail.com");
   const [password, setPassword] = useState("azerty");
 
   const login = () => {
