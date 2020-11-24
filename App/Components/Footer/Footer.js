@@ -18,13 +18,17 @@ const Footer = ({ navigation }) => {
     dispatch(UserActions.logout());
   }
 
+  const displaySocial = (url) => {
+    navigation.navigate('Social', {url: url});
+  }
+
 	return (
 		<View style={styles.container}>
       <View style={{alignSelf: 'center', flexDirection: 'row'}}>
-        <TouchableOpacity style={styles.socialButton} onPress={() => console.log("nav")}>
+        <TouchableOpacity style={styles.socialButton} onPress={() => {displaySocial('https://www.instagram.com/nobofrance/')}}>
           <Feather name="instagram" size={36} color={Colors.white} />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.socialButton} onPress={() => console.log("nav")}>
+        <TouchableOpacity style={styles.socialButton} onPress={() => displaySocial('https://www.facebook.com/nobofrance')}>
           <FontAwesome name="facebook-square" size={36} color={Colors.white} />
         </TouchableOpacity>
       </View>

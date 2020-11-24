@@ -15,7 +15,7 @@ const Home = ({ navigation }) => {
 		<View style={styles.container}>
       <Header navigation={navigation} />
 			<View style={{felx: 1}}/>
-			<Footer />
+			<Footer navigation={navigation} />
 		</View>
 	);
 };
