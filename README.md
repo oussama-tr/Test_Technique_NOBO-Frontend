@@ -1,6 +1,6 @@
 # Test_Technique_NOBO-Frontend
 
-Steps : 
+## Steps to run
 
 1 - clone this repository and run in project root folder : #npm install
 
