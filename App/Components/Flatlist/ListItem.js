@@ -1,5 +1,5 @@
 import React, { useContext, useRef } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, FlatList } from 'react-native';
 import { Colors } from 'App/Theme';
 import { Divider } from 'react-native-paper';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
@@ -9,13 +9,15 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import { Modalize } from 'react-native-modalize';
 import ServiceActions from 'App/Stores/Service/Actions';
 import { useDispatch } from 'react-redux';
+import { Portal } from 'react-native-portalize';
+import ListItemRating from 'App/Components/Flatlist/ListItemRating';
 
 const ListItem = ({ item }) => {
 
 	const dispatch = useDispatch();
 
-	const quickViewModalRef = useRef(null);
-	const quickView = () => quickViewModalRef.current?.open();
+	const ratingMoal = useRef(null);
+	const viewRatings = () => ratingMoal.current?.open();
 
 	const formatDate = date => dateFormat(new Date(date), 'd mmmm yyyy');
 
@@ -33,7 +35,7 @@ const ListItem = ({ item }) => {
 					: null
 				}
 				<View style={{flexDirection: 'row', alignSelf: 'flex-end'}}>
-					<TouchableOpacity>
+					<TouchableOpacity onPress={() => {viewRatings()}}>
 						<AntDesign name="star" size={24} color={Colors.darker} />
 					</TouchableOpacity>
 					{!item.canceled ? <TouchableOpacity onPress={() => {cancel()}} style={{marginLeft: 10}}>
@@ -51,8 +53,22 @@ const ListItem = ({ item }) => {
 					<Text style={styles.text}>{`${item.provider.firstname} ${item.provider.lastname}` }</Text>
 				</View>
 			</View>
+			<Portal>
+				<Modalize
+						modalTopOffset={90}
+						modalStyle={styles.modal}
+						ref={ratingMoal}>
+						<TouchableOpacity style={{alignItems: 'center', marginVertical: 10}} onPress={() => {ratingMoal.current?.close(); console.log(item.ratings);}}>
+							<MaterialIcons name="cancel" size={34} color={Colors.darker} />
+						</TouchableOpacity>
+						<FlatList
+						data={item.ratings}
+						renderItem={({ item, index }) => <ListItemRating item={item}/>}
+						keyExtractor={item => item.id.toString()}
+						/>
 
-
+				</Modalize>
+			</Portal>
 		</View>
 	);
 };

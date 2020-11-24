@@ -7,6 +7,7 @@ export function* fetch(action) {
   const response = yield call(serviceService.fetch, action.payload);
   if (response) {
     yield put(ServiceTypes.fetchSuccess(response));
+    yield put(ServiceTypes.actionSuccess(null));
   } else {
     yield put(ServiceTypes.fetchFailure("error"));
   }

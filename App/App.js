@@ -6,6 +6,7 @@ import RootScreen from './Containers/Root/RootScreen';
 import { Provider as PaperProvider } from 'react-native-paper';
 import { ApplicationStyles } from 'App/Theme';
 const { store, persistor } = createStore();
+import { Host } from 'react-native-portalize';
 
 export default class App extends Component {
 	render() {
@@ -13,7 +14,9 @@ export default class App extends Component {
 			<Provider store={store}>
 				<PersistGate loading={null} persistor={persistor}>
 					<PaperProvider theme={ApplicationStyles.paperStyle}>
-						<RootScreen />
+						<Host>
+							<RootScreen />
+						</Host>
 					</PaperProvider>
 				</PersistGate>
 			</Provider>
