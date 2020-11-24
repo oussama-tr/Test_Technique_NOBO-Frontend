@@ -37,9 +37,11 @@ function login(payload) {
   return userApiClientBase()
     .post('/auth/login/', payload)
     .then((response) => {
+      console.log(response);
       return response.data;
     })
     .catch(function(error) {
+      console.log(error);
       return null;
     });
 }

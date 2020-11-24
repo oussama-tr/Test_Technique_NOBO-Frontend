@@ -1,24 +1,20 @@
-/* @flow */
+import React, { useState } from 'react';
+import { View, Text, TouchableOpacity, Image, ImageBackground } from 'react-native';
+import styles from './HomeStyle';
+import { ApplicationStyles } from 'App/Theme';
+import { Colors, Images } from 'App/Theme'
+import { useDispatch, useSelector } from 'react-redux';
+import { TextInput } from 'react-native-paper';
+import UserActions from 'App/Stores/User/Actions';
+import Header from 'App/Components/Header/Header';
 
-import React, { Component } from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-} from 'react-native';
+const Home = ({ navigation }) => {
 
-export default class Home extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>I'm the Home component</Text>
-      </View>
-    );
-  }
-}
+	return (
+		<View style={styles.container}>
+      <Header />
+		</View>
+	);
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+export default Home;
