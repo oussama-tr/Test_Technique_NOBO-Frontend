@@ -28,5 +28,16 @@ export default StyleSheet.create({
     fontSize: 15,
     textAlign: 'center',
     fontWeight: 'bold',
+  },
+  banner: {
+    height: 50,
+    padding: 4,
+    backgroundColor: Colors.accent,
+  },
+  bannerText: {
+    textAlign: 'center',
+    color: "#343a40",
+    fontSize: 13,
+    fontWeight: 'bold'
   }
 })

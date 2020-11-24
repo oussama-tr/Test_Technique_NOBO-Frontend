@@ -12,7 +12,7 @@ const Home = ({ navigation }) => {
 
 	return (
 		<View style={styles.container}>
-      <Header />
+      <Header navigation={navigation} />
 		</View>
 	);
 };

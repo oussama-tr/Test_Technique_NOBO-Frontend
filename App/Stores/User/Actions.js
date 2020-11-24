@@ -7,6 +7,7 @@ const { Types, Creators } = createActions({
   login: ['payload'],
   loginSuccess: ['response'],
   loginFailure: ['errorMessage'],
+  logout: null,
 });
 
 export const UserTypes = Types;

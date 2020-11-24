@@ -8,6 +8,7 @@
 export default {
   white: '#ffffff',
   primary: '#f6bbb1',
+  accent:'#68cbbf',
   darker: "#ff7366",
   light: "#ffe8e6",
   grey: '#4F4F4F',

@@ -22,3 +22,7 @@ export function* login(action) {
     yield put(UserTypes.loginFailure(response.message));
   }
 }
+
+export function* logout() {
+  yield put(UserTypes.clear());
+}

@@ -31,9 +31,18 @@ export const loginFailure = (state, { errorMessage }) => ({
   loginErrorMessage: errorMessage,
 });
 
+export const clear = (state) => ({
+  ...state,
+  user: null,
+  token: null,
+  loginErrorMessage: null,
+  registerErrorMessage: null,
+});
+
 export const reducer = createReducer(INITIAL_STATE, {
   [UserTypes.REGISTER_SUCCESS]: registerSuccess,
   [UserTypes.REGISTER_FAILURE]: registerFailure,
   [UserTypes.LOGIN_SUCCESS]: loginSuccess,
   [UserTypes.LOGIN_FAILURE]: loginFailure,
+  [UserTypes.LOGOUT]: clear,
 });
