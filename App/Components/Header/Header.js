@@ -28,10 +28,10 @@ const Header = ({ navigation }) => {
           <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
             <View style={{flexDirection: 'row', alignItems: 'center'}}>
               <FontAwesome name="phone" size={22} color={Colors.darker} />
-              <Text style={[styles.text, {marginLeft: 10, color: Colors.darker}]}>01 87 66 53 52</Text>
+              <Text style={[styles.text, {marginLeft: 5, color: Colors.darker}]}>01 87 66 53 52</Text>
             </View>
             <View style={{flexDirection: 'row', alignItems: 'center'}}>
-              <Text style={[styles.text, {marginRight: 10, color: "#343a40", fontWeight: 'bold', fontSize: 14}]}>{user? `${user.lastname} ${user.firstname}` : ''}</Text>
+              <Text style={[styles.text, {marginRight: 5, color: "#343a40", fontWeight: 'bold', fontSize: 14}]}>{user? `${user.lastname} ${user.firstname}` : ''}</Text>
               <TouchableOpacity onPress={() => logout()}>
                 <MaterialCommunityIcons name="exit-run" size={32} color="#343a40" />
               </TouchableOpacity>

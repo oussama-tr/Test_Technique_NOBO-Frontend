@@ -7,12 +7,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { TextInput } from 'react-native-paper';
 import UserActions from 'App/Stores/User/Actions';
 import Header from 'App/Components/Header/Header';
+import Footer from 'App/Components/Footer/Footer';
 
 const Home = ({ navigation }) => {
 
 	return (
 		<View style={styles.container}>
       <Header navigation={navigation} />
+			<View style={{felx: 1}}/>
+			<Footer />
 		</View>
 	);
 };
