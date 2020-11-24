@@ -1,5 +1,6 @@
 import React from 'react'
-import { createAppContainer, createStackNavigator } from 'react-navigation'
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 import SplashScreen from 'App/Containers/SplashScreen/SplashScreen'
 import Signin from 'App/Containers/Signin/Signin'
 import Signup from 'App/Containers/Signup/Signup'
