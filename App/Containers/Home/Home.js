@@ -16,6 +16,7 @@ const Home = ({ navigation }) => {
 	const user = useSelector((state) => state.user.user);
 	const token = useSelector((state) => state.user.token);
 	const rows = useSelector((state) => state.service.rows);
+	const response = useSelector((state) => state.service.response);
 
 	const dispatch = useDispatch();
 
@@ -25,7 +26,7 @@ const Home = ({ navigation }) => {
 			userId: user.id
 		};
 		dispatch(ServiceActions.fetch(payload));
-  }, []);
+  }, [response]);
 
 	return (
 		<ScrollView style={styles.container}>

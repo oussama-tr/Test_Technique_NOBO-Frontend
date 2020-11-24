@@ -37,4 +37,5 @@ function cancel(payload) {
 
 export const serviceService = {
   fetch,
+  cancel
 };

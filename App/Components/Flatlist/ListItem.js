@@ -11,7 +11,7 @@ import ServiceActions from 'App/Stores/Service/Actions';
 import { useDispatch } from 'react-redux';
 
 const ListItem = ({ item }) => {
-	
+
 	const dispatch = useDispatch();
 
 	const quickViewModalRef = useRef(null);
@@ -28,14 +28,19 @@ const ListItem = ({ item }) => {
 
 	return (
 		<View style={styles.container}>
-			<View style={styles.item}>
+			<View style={[styles.item, {backgroundColor: !item.canceled? 'rgba(246, 187, 177, 0.6)': Colors.light}]}>
+				{	item.canceled ? <Text style={{}}>vous avez annulé ce service</Text>
+					: null
+				}
 				<View style={{flexDirection: 'row', alignSelf: 'flex-end'}}>
 					<TouchableOpacity>
 						<AntDesign name="star" size={24} color={Colors.darker} />
 					</TouchableOpacity>
-					<TouchableOpacity onPress={() => {cancel()}} style={{marginLeft: 10}}>
+					{!item.canceled ? <TouchableOpacity onPress={() => {cancel()}} style={{marginLeft: 10}}>
 						<MaterialIcons name="cancel" size={24} color={Colors.darker} />
 					</TouchableOpacity>
+					: null
+					}
 				</View>
 				<View style={{flexDirection: 'row', marginBottom: 10, alignItems: 'center'}}>
 					<FontAwesome name="home" size={30} color={Colors.darker} />
@@ -60,7 +65,6 @@ const styles = StyleSheet.create({
 	},
 	item: {
 		margin: 10,
-		backgroundColor: 'rgba(246, 187, 177, 0.6)',
 		padding: 30,
 		borderRadius: 12,
 	},
