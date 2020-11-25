@@ -4,9 +4,14 @@
 
 1 - clone this repository and run in project root folder : #npm install
 
-2 - Change the ip address in BASE_URL in App/Config/index.js to your current ip address ( make sure you run the server on the same network as the mobile app )
+2 - Change the ip address in BASE_URL in App/Config/index.js to your current ip address
 
-3 - run the application using : #react-native run-android
+3 - run the server on the same network as the mobile app 
+
+  ( server repo : https://github.com/Oussama-Trabelsi/Test_Technique_NOBO-Backend )
+
+4 - run the application using : #react-native run-android
+
 
 ## Features
 <dl>
